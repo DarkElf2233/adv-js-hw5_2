@@ -9,8 +9,8 @@ test('Character damage()', () => {
 
 test('Character damage() Error', () => {
   const character = new Character('Swordsman', 'Swordsman', 40, 10);
-  character.damage(120);
-  // expect(character.damage(10)).toThrow(Error);
+  character.health = 0;
+  expect(() => character.damage(10)).toThrow(Error);
 });
 
 test('Character levelUp()', () => {
@@ -23,6 +23,6 @@ test('Character levelUp()', () => {
 
 test('Character levelUp() Error', () => {
   const character = new Character('Bowerman', 'Bowman', 25, 25);
-  character.damage(150);
-  // expect(character.levelUp()).toThrow(Error);
+  character.health = 0;
+  expect(() => character.levelUp()).toThrow(Error);
 });
